@@ -1,0 +1,18 @@
+app = "maryam-reminder-bot"
+primary_region = "ams"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  TIMEZONE = "Asia/Riyadh"
+  DB_PATH = "/data/reminders.db"
+
+[mounts]
+  source = "maryam_data"
+  destination = "/data"
+
+[[vm]]
+  memory = "256mb"
+  cpu_kind = "shared"
+  cpus = 1

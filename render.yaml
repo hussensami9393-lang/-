@@ -1,0 +1,13 @@
+services:
+  - type: worker
+    name: maryam-reminder-bot
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: TIMEZONE
+        value: Asia/Riyadh
+      - key: DB_PATH
+        value: reminders.db
+      - key: BOT_TOKEN
+        sync: false
